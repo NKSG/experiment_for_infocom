@@ -1,10 +1,12 @@
 CC =g++
+OBJ = statistic.o
+SOURCE = statistic.cpp
 
-all : pre_process.o
-    $(cc) -o all statistic.o
+all : $(OBJ)
+	$(CC) -o all $(OBJ)
 
-pre_process.o : statistic.cpp
-    $(cc) -c statistic.cpp
+$(OBJ) : $(SOURCE)
+	$(CC) -c $(SOURCE)
     
     
       
