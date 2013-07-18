@@ -1,6 +1,0 @@
-matrix = load('digit_statistic.data') ;%read file to a matrix
-
-
-
-[ca, cd] = dwtndn(matrix,'db5');   %multi-dimension transform
-
