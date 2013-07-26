@@ -159,13 +159,14 @@ public:
 void process_digit_attribute(const char*filename) //统计数字属性
 {
 	FILE *f=NULL,*out=NULL;
+	int count =0;
 	struct digit_attribute d;
 	map<struct digit_attribute,int,classcomp> digit_map;
 
 	out = fopen("digit_statistic.data","w");
 	fprintf(out,"age  education-num  capital-gain  capital-loss  hours-per-week  count\n");
 	f = fopen(filename,"r");
-	while(!feof(f))
+	while(!feof(f) && count++<30000)
 	{
 		fscanf(f,"%d  %*s  %*d  %*s  %d  %*s  %*s  %*s  %*s  %*s  %d  %d  %d  %*s  %*s", \
 		&d.age, &d.education_num, &d.capital_gain, &d.capital_loss, &d.hours_per_week);
